@@ -346,7 +346,7 @@ function initSearchFilter() {
       if (category && category.value) params.set('kategori', category.value);
       if (keyword && keyword.value) params.set('q', keyword.value);
 
-      window.location.href = 'paket-wisata.html' + (params.toString() ? '?' + params.toString() : '');
+      window.location.href = 'paket-wisata.php' + (params.toString() ? '?' + params.toString() : '');
     });
   }
 
