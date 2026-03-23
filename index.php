@@ -680,7 +680,7 @@
 
         <!-- Wisata Edukasi -->
         <a href="paket-wisata.php?kategori=edukasi" class="category-card reveal reveal--delay-2">
-          <img src="https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=600&q=80" alt="Wisata Edukasi - Belajar dan berwisata" class="category-card__img" loading="lazy">
+          <img src="./images/wisata-edukasi.webp" alt="Wisata Edukasi - Belajar dan berwisata" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
             <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -691,7 +691,7 @@
 
         <!-- Bulan Madu -->
         <a href="paket-wisata.php?kategori=bulan-madu" class="category-card reveal reveal--delay-3">
-          <img src="https://images.unsplash.com/photo-1546514355-7fdc90ccbd03?w=600&q=80" alt="Bulan Madu - Romantis di pantai" class="category-card__img" loading="lazy">
+          <img src="./images/bulan-madu.jpeg" alt="Bulan Madu - Romantis di pantai" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
             <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
