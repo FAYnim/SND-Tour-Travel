@@ -354,7 +354,7 @@
             <div class="card__footer">
               <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Garuda Indonesia">
-                <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">GA</span>
+                <img src="images/garuda-indonesia.png" alt="Garuda Indonesia" style="height:12px;width:auto;object-fit:contain;">
               </div>
             </div>
           </div>
@@ -388,7 +388,7 @@
             <div class="card__footer">
               <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Lion Air">
-                <span style="font-size:10px;font-weight:700;color:var(--coral);">JT</span>
+                <img src="images/lionair.png" alt="Lion Air" style="height:12px;width:auto;object-fit:contain;">
               </div>
             </div>
           </div>
@@ -422,7 +422,7 @@
             <div class="card__footer">
               <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Singapore Airlines">
-                <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">SQ</span>
+                <img src="images/singapore-airlines.png" alt="Singapore Airlines" style="height:12px;width:auto;object-fit:contain;">
               </div>
             </div>
           </div>
@@ -455,7 +455,7 @@
             <div class="card__footer">
               <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Citilink">
-                <span style="font-size:10px;font-weight:700;color:var(--emerald);">QG</span>
+                <img src="images/citilink.png" alt="Citilink" style="height:10px;width:auto;object-fit:contain;">
               </div>
             </div>
           </div>
@@ -489,7 +489,7 @@
             <div class="card__footer">
               <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Malaysia Airlines">
-                <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">MH</span>
+                <img src="images/malaysia-airlines.png" alt="Malaysia Airlines" style="height:12px;width:auto;object-fit:contain;">
               </div>
             </div>
           </div>
@@ -523,7 +523,7 @@
             <div class="card__footer">
               <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Garuda Indonesia">
-                <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">GA</span>
+                <img src="images/garuda-indonesia.png" alt="Garuda Indonesia" style="height:12px;width:auto;object-fit:contain;">
               </div>
             </div>
           </div>
@@ -929,33 +929,33 @@
       <!-- Airline Partner Logos -->
       <div class="partners__logos">
         <div class="partner-logo" title="Garuda Indonesia">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:12px;color:var(--teal-dark);text-align:center;line-height:1.2;">Garuda<br>Indonesia</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/garuda-indonesia.png" alt="Garuda Indonesia" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Lion Air">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--coral);text-align:center;line-height:1.2;">Lion Air</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/lionair.png" alt="Lion Air" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Citilink">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--emerald);text-align:center;line-height:1.2;">Citilink</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/citilink.png" alt="Citilink" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="AirAsia">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--coral);text-align:center;line-height:1.2;">AirAsia</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/airasia.png" alt="AirAsia" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Singapore Airlines">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:11px;color:var(--teal-dark);text-align:center;line-height:1.2;">Singapore<br>Airlines</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/singapore-airlines.png" alt="Singapore Airlines" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Malaysia Airlines">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-display);font-weight:700;font-size:11px;color:var(--teal-dark);text-align:center;line-height:1.2;">Malaysia<br>Airlines</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/malaysia-airlines.png" alt="Malaysia Airlines" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
       </div>
