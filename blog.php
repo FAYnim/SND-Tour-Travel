@@ -15,7 +15,7 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sndtour.com/blog.html">
+  <meta property="og:url" content="https://sndtour.com/blog.php">
   <meta property="og:title" content="Blog — Tips & Inspirasi Perjalanan | SnD Tour Travel">
   <meta property="og:description" content="Temukan tips traveling, fun facts destinasi, dan panduan perjalanan lengkap dari SnD Tour Travel.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1488646472563-ce91c0cc1390?w=1200&q=80">
@@ -24,7 +24,7 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://sndtour.com/blog.html">
+  <meta property="twitter:url" content="https://sndtour.com/blog.php">
   <meta property="twitter:title" content="Blog — Tips & Inspirasi Perjalanan | SnD Tour Travel">
   <meta property="twitter:description" content="Temukan tips traveling, fun facts destinasi, dan panduan perjalanan lengkap dari SnD Tour Travel.">
   <meta property="twitter:image" content="https://images.unsplash.com/photo-1488646472563-ce91c0cc1390?w=1200&q=80">
@@ -33,7 +33,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23008080'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='white' font-family='Georgia' font-size='48' font-weight='bold'%3ESnD%3C/text%3E%3C/svg%3E">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://sndtour.com/blog.html">
+  <link rel="canonical" href="https://sndtour.com/blog.php">
 
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <!-- Logo -->
-      <a href="index.html" class="header__logo" aria-label="SnD Tour Travel - Halaman Utama">
+      <a href="index.php" class="header__logo" aria-label="SnD Tour Travel - Halaman Utama">
         <div class="header__logo-icon">SnD</div>
         <div>
           <span class="header__logo-text">SnD Tour</span>
@@ -63,63 +63,63 @@
         <ul style="display:flex;align-items:center;gap:var(--space-1);list-style:none;margin:0;padding:0;">
           <!-- HOME -->
           <li class="nav__item">
-            <a href="index.html" class="nav__link">HOME</a>
+            <a href="index.php" class="nav__link">HOME</a>
           </li>
 
           <!-- PROFIL (Dropdown) -->
           <li class="nav__item">
-            <a href="profil.html" class="nav__link">
+            <a href="profil.php" class="nav__link">
               PROFIL
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="nav__dropdown">
-              <a href="profil.html" class="nav__dropdown-link">Tentang Kami</a>
-              <a href="profil.html#visi-misi" class="nav__dropdown-link">Visi &amp; Misi</a>
+              <a href="profil.php" class="nav__dropdown-link">Tentang Kami</a>
+              <a href="profil.php#visi-misi" class="nav__dropdown-link">Visi &amp; Misi</a>
             </div>
           </li>
 
           <!-- PAKET WISATA (Dropdown) -->
           <li class="nav__item">
-            <a href="paket-wisata.html" class="nav__link">
+            <a href="paket-wisata.php" class="nav__link">
               PAKET WISATA
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="nav__dropdown">
-              <a href="paket-wisata.html?kategori=domestik" class="nav__dropdown-link">Domestik</a>
-              <a href="paket-wisata.html?kategori=asia" class="nav__dropdown-link">Asia</a>
+              <a href="paket-wisata.php?kategori=domestik" class="nav__dropdown-link">Domestik</a>
+              <a href="paket-wisata.php?kategori=asia" class="nav__dropdown-link">Asia</a>
             </div>
           </li>
 
           <!-- OUTBOND -->
           <li class="nav__item">
-            <a href="outbond.html" class="nav__link">OUTBOND</a>
+            <a href="outbond.php" class="nav__link">OUTBOND</a>
           </li>
 
           <!-- CATERING -->
           <li class="nav__item">
-            <a href="catering.html" class="nav__link">CATERING</a>
+            <a href="catering.php" class="nav__link">CATERING</a>
           </li>
 
           <!-- BLOG (Active) -->
           <li class="nav__item">
-            <a href="blog.html" class="nav__link nav__link--active">BLOG</a>
+            <a href="blog.php" class="nav__link nav__link--active">BLOG</a>
           </li>
 
           <!-- GALERI -->
           <li class="nav__item">
-            <a href="galeri.html" class="nav__link">GALERI</a>
+            <a href="galeri.php" class="nav__link">GALERI</a>
           </li>
 
           <!-- KONTAK -->
           <li class="nav__item">
-            <a href="kontak.html" class="nav__link">KONTAK</a>
+            <a href="kontak.php" class="nav__link">KONTAK</a>
           </li>
         </ul>
       </nav>
 
       <!-- Header CTA -->
       <div class="header__cta">
-        <a href="kontak.html" class="btn btn--primary btn--sm">HUBUNGI KAMI</a>
+        <a href="kontak.php" class="btn btn--primary btn--sm">HUBUNGI KAMI</a>
       </div>
 
       <!-- Mobile Hamburger Toggle -->
@@ -141,7 +141,7 @@
     <div class="container">
       <div class="page-header__content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="index.php">Home</a>
           <span class="breadcrumb__sep">/</span>
           <span>Blog</span>
         </nav>
@@ -183,7 +183,7 @@
 
         <!-- Blog Card 1 -->
         <article class="card blog-card reveal reveal--delay-1" data-category="tips">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1488646472563-ce91c0cc1390?w=600&q=80" alt="Tips packing efisien untuk liburan keluarga" loading="lazy" width="600" height="375">
               <span class="card__badge card__badge--teal">Tips Traveling</span>
@@ -191,7 +191,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Tips Traveling</span>
-            <h3 class="card__title"><a href="blog-detail.html">10 Tips Packing Efisien untuk Liburan Keluarga</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">10 Tips Packing Efisien untuk Liburan Keluarga</a></h3>
             <p class="card__text" style="display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">Packing untuk keluarga memang menantang. Pelajari cara mengemas barang secara efisien agar koper tetap ringan dan semua kebutuhan terpenuhi.</p>
             <div class="card__footer">
               <div style="display:flex;align-items:center;gap:var(--space-4);">
@@ -204,7 +204,7 @@
                   5 min read
                 </span>
               </div>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 BACA SELENGKAPNYA
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -214,7 +214,7 @@
 
         <!-- Blog Card 2 -->
         <article class="card blog-card reveal reveal--delay-2" data-category="funfacts">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Keunikan tradisi di Bali yang menarik" loading="lazy" width="600" height="375">
               <span class="card__badge" style="background:var(--amber);color:var(--near-black);">Fun Facts</span>
@@ -222,7 +222,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Fun Facts</span>
-            <h3 class="card__title"><a href="blog-detail.html">Fakta Menarik: Keunikan Tradisi di Bali</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">Fakta Menarik: Keunikan Tradisi di Bali</a></h3>
             <p class="card__text" style="display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">Bali bukan hanya tentang pantai dan pura. Temukan fakta-fakta unik tentang tradisi dan budaya Bali yang mungkin belum Anda ketahui sebelumnya.</p>
             <div class="card__footer">
               <div style="display:flex;align-items:center;gap:var(--space-4);">
@@ -235,7 +235,7 @@
                   4 min read
                 </span>
               </div>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 BACA SELENGKAPNYA
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -245,7 +245,7 @@
 
         <!-- Blog Card 3 -->
         <article class="card blog-card reveal reveal--delay-3" data-category="panduan">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600&q=80" alt="Panduan wisata kuliner Singapura" loading="lazy" width="600" height="375">
               <span class="card__badge" style="background:var(--emerald);color:var(--white);">Panduan Destinasi</span>
@@ -253,7 +253,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Panduan Destinasi</span>
-            <h3 class="card__title"><a href="blog-detail.html">Panduan Lengkap Wisata Kuliner Singapura</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">Panduan Lengkap Wisata Kuliner Singapura</a></h3>
             <p class="card__text" style="display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">Singapura dikenal sebagai surga kuliner Asia. Dari hawker center legendaris hingga restoran Michelin, ini panduan lengkap untuk food tour Anda.</p>
             <div class="card__footer">
               <div style="display:flex;align-items:center;gap:var(--space-4);">
@@ -266,7 +266,7 @@
                   7 min read
                 </span>
               </div>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 BACA SELENGKAPNYA
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -276,7 +276,7 @@
 
         <!-- Blog Card 4 -->
         <article class="card blog-card reveal reveal--delay-4" data-category="tips">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" alt="Cara memilih paket tour yang tepat" loading="lazy" width="600" height="375">
               <span class="card__badge card__badge--teal">Tips Traveling</span>
@@ -284,7 +284,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Tips Traveling</span>
-            <h3 class="card__title"><a href="blog-detail.html">Cara Memilih Paket Tour yang Tepat</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">Cara Memilih Paket Tour yang Tepat</a></h3>
             <p class="card__text" style="display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">Bingung memilih paket tour? Simak panduan lengkap kami tentang hal-hal yang perlu diperhatikan sebelum booking paket wisata agar liburan sesuai harapan.</p>
             <div class="card__footer">
               <div style="display:flex;align-items:center;gap:var(--space-4);">
@@ -297,7 +297,7 @@
                   6 min read
                 </span>
               </div>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 BACA SELENGKAPNYA
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -307,7 +307,7 @@
 
         <!-- Blog Card 5 -->
         <article class="card blog-card reveal reveal--delay-5" data-category="panduan">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Destinasi tersembunyi di Jawa Timur" loading="lazy" width="600" height="375">
               <span class="card__badge" style="background:var(--emerald);color:var(--white);">Panduan Destinasi</span>
@@ -315,7 +315,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Panduan Destinasi</span>
-            <h3 class="card__title"><a href="blog-detail.html">5 Destinasi Tersembunyi di Jawa Timur</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">5 Destinasi Tersembunyi di Jawa Timur</a></h3>
             <p class="card__text" style="display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">Jawa Timur menyimpan permata wisata yang belum banyak dijamah. Dari air terjun tersembunyi hingga desa adat yang memesona, temukan semuanya di sini.</p>
             <div class="card__footer">
               <div style="display:flex;align-items:center;gap:var(--space-4);">
@@ -328,7 +328,7 @@
                   8 min read
                 </span>
               </div>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 BACA SELENGKAPNYA
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -338,7 +338,7 @@
 
         <!-- Blog Card 6 -->
         <article class="card blog-card reveal reveal--delay-6" data-category="funfacts">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Fun facts tentang Malaysia Truly Asia" loading="lazy" width="600" height="375">
               <span class="card__badge" style="background:var(--amber);color:var(--near-black);">Fun Facts</span>
@@ -346,7 +346,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Fun Facts</span>
-            <h3 class="card__title"><a href="blog-detail.html">Fun Facts: Mengapa Malaysia Disebut Truly Asia?</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">Fun Facts: Mengapa Malaysia Disebut Truly Asia?</a></h3>
             <p class="card__text" style="display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;">Slogan &ldquo;Malaysia, Truly Asia&rdquo; ternyata punya makna mendalam. Cari tahu alasan di balik julukan ini dan fakta-fakta seru tentang negeri jiran kita.</p>
             <div class="card__footer">
               <div style="display:flex;align-items:center;gap:var(--space-4);">
@@ -359,7 +359,7 @@
                   3 min read
                 </span>
               </div>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 BACA SELENGKAPNYA
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -371,9 +371,9 @@
 
       <!-- Pagination -->
       <nav class="pagination" aria-label="Navigasi halaman blog">
-        <a href="blog.html" class="pagination__item pagination__item--active" aria-current="page">1</a>
-        <a href="blog.html?page=2" class="pagination__item">2</a>
-        <a href="blog.html?page=2" class="pagination__item" aria-label="Halaman berikutnya">
+        <a href="blog.php" class="pagination__item pagination__item--active" aria-current="page">1</a>
+        <a href="blog.php?page=2" class="pagination__item">2</a>
+        <a href="blog.php?page=2" class="pagination__item" aria-label="Halaman berikutnya">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </nav>
@@ -426,11 +426,11 @@
         <div>
           <h4 class="footer__heading">Layanan</h4>
           <nav class="footer__links" aria-label="Layanan SnD Tour">
-            <a href="paket-wisata.html" class="footer__link">Paket Wisata</a>
-            <a href="outbond.html" class="footer__link">Outbond</a>
-            <a href="catering.html" class="footer__link">Catering</a>
-            <a href="blog.html" class="footer__link">Blog</a>
-            <a href="galeri.html" class="footer__link">Galeri</a>
+            <a href="paket-wisata.php" class="footer__link">Paket Wisata</a>
+            <a href="outbond.php" class="footer__link">Outbond</a>
+            <a href="catering.php" class="footer__link">Catering</a>
+            <a href="blog.php" class="footer__link">Blog</a>
+            <a href="galeri.php" class="footer__link">Galeri</a>
           </nav>
         </div>
 
@@ -438,14 +438,14 @@
         <div>
           <h4 class="footer__heading">Kategori Tour</h4>
           <nav class="footer__links" aria-label="Kategori Tour">
-            <a href="paket-wisata.html?kategori=domestik" class="footer__link">Tour Domestik</a>
-            <a href="paket-wisata.html?kategori=asia" class="footer__link">Tour Asia</a>
-            <a href="outbond.html" class="footer__link">Outbond</a>
-            <a href="catering.html" class="footer__link">Catering</a>
-            <a href="paket-wisata.html?kategori=religi" class="footer__link">Wisata Religi</a>
-            <a href="paket-wisata.html?kategori=edukasi" class="footer__link">Wisata Edukasi</a>
-            <a href="paket-wisata.html?kategori=bulan-madu" class="footer__link">Bulan Madu</a>
-            <a href="paket-wisata.html?kategori=keluarga" class="footer__link">Wisata Keluarga</a>
+            <a href="paket-wisata.php?kategori=domestik" class="footer__link">Tour Domestik</a>
+            <a href="paket-wisata.php?kategori=asia" class="footer__link">Tour Asia</a>
+            <a href="outbond.php" class="footer__link">Outbond</a>
+            <a href="catering.php" class="footer__link">Catering</a>
+            <a href="paket-wisata.php?kategori=religi" class="footer__link">Wisata Religi</a>
+            <a href="paket-wisata.php?kategori=edukasi" class="footer__link">Wisata Edukasi</a>
+            <a href="paket-wisata.php?kategori=bulan-madu" class="footer__link">Bulan Madu</a>
+            <a href="paket-wisata.php?kategori=keluarga" class="footer__link">Wisata Keluarga</a>
           </nav>
         </div>
 

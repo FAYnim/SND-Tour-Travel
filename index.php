@@ -95,7 +95,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <!-- Logo -->
-      <a href="index.html" class="header__logo" aria-label="SnD Tour Travel - Halaman Utama">
+      <a href="index.php" class="header__logo" aria-label="SnD Tour Travel - Halaman Utama">
         <div class="header__logo-icon">SnD</div>
         <div>
           <span class="header__logo-text">SnD Tour</span>
@@ -108,63 +108,63 @@
         <ul style="display:flex;align-items:center;gap:var(--space-1);list-style:none;margin:0;padding:0;">
           <!-- HOME -->
           <li class="nav__item">
-            <a href="index.html" class="nav__link nav__link--active">HOME</a>
+            <a href="index.php" class="nav__link nav__link--active">HOME</a>
           </li>
 
           <!-- PROFIL (Dropdown) -->
           <li class="nav__item">
-            <a href="profil.html" class="nav__link">
+            <a href="profil.php" class="nav__link">
               PROFIL
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="nav__dropdown">
-              <a href="profil.html#tentang-kami" class="nav__dropdown-link">Tentang Kami</a>
-              <a href="profil.html#visi-misi" class="nav__dropdown-link">Visi &amp; Misi</a>
+              <a href="profil.php#tentang-kami" class="nav__dropdown-link">Tentang Kami</a>
+              <a href="profil.php#visi-misi" class="nav__dropdown-link">Visi &amp; Misi</a>
             </div>
           </li>
 
           <!-- PAKET WISATA (Dropdown) -->
           <li class="nav__item">
-            <a href="paket-wisata.html" class="nav__link">
+            <a href="paket-wisata.php" class="nav__link">
               PAKET WISATA
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="nav__dropdown">
-              <a href="paket-wisata.html?kategori=domestik" class="nav__dropdown-link">Domestik</a>
-              <a href="paket-wisata.html?kategori=asia" class="nav__dropdown-link">Asia</a>
+              <a href="paket-wisata.php?kategori=domestik" class="nav__dropdown-link">Domestik</a>
+              <a href="paket-wisata.php?kategori=asia" class="nav__dropdown-link">Asia</a>
             </div>
           </li>
 
           <!-- OUTBOND -->
           <li class="nav__item">
-            <a href="outbond.html" class="nav__link">OUTBOND</a>
+            <a href="outbond.php" class="nav__link">OUTBOND</a>
           </li>
 
           <!-- CATERING -->
           <li class="nav__item">
-            <a href="catering.html" class="nav__link">CATERING</a>
+            <a href="catering.php" class="nav__link">CATERING</a>
           </li>
 
           <!-- BLOG -->
           <li class="nav__item">
-            <a href="blog.html" class="nav__link">BLOG</a>
+            <a href="blog.php" class="nav__link">BLOG</a>
           </li>
 
           <!-- GALERI -->
           <li class="nav__item">
-            <a href="galeri.html" class="nav__link">GALERI</a>
+            <a href="galeri.php" class="nav__link">GALERI</a>
           </li>
 
           <!-- KONTAK -->
           <li class="nav__item">
-            <a href="kontak.html" class="nav__link">KONTAK</a>
+            <a href="kontak.php" class="nav__link">KONTAK</a>
           </li>
         </ul>
       </nav>
 
       <!-- Header CTA -->
       <div class="header__cta">
-        <a href="kontak.html" class="btn btn--primary btn--sm">HUBUNGI KAMI</a>
+        <a href="kontak.php" class="btn btn--primary btn--sm">HUBUNGI KAMI</a>
       </div>
 
       <!-- Mobile Hamburger Toggle -->
@@ -208,7 +208,7 @@
       <h1 class="hero__title">Liburan <em>Pasti</em> Berangkat</h1>
       <p class="hero__subtitle">Wujudkan liburan impian Anda bersama SnD Tour Travel. Paket wisata domestik &amp; Asia yang terencana, fleksibel, dan transparan untuk pengalaman tak terlupakan.</p>
       <div class="hero__actions">
-        <a href="profil.html" class="btn btn--primary btn--lg">TENTANG KAMI</a>
+        <a href="profil.php" class="btn btn--primary btn--lg">TENTANG KAMI</a>
         <a href="#search-section" class="btn btn--outline-light btn--lg">CARI TOUR</a>
       </div>
     </div>
@@ -328,7 +328,7 @@
 
         <!-- Card 1 -->
         <article class="card reveal reveal--delay-1" data-category="domestik">
-          <a href="detail-paket.html">
+          <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Pemandangan sawah terasering di Bali" loading="lazy" width="600" height="375">
               <span class="card__badge">Promo</span>
@@ -336,7 +336,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket.html">Pesona Bali 5D4N</a></h3>
+            <h3 class="card__title"><a href="detail-paket.php">Pesona Bali 5D4N</a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -352,7 +352,7 @@
               <span class="card__price-value">Rp 4.250.000</span>
             </div>
             <div class="card__footer">
-              <a href="detail-paket.html" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
+              <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Garuda Indonesia">
                 <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">GA</span>
               </div>
@@ -362,7 +362,7 @@
 
         <!-- Card 2 -->
         <article class="card reveal reveal--delay-2" data-category="domestik">
-          <a href="detail-paket.html">
+          <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=600&q=80" alt="Panorama Labuan Bajo dengan laut biru" loading="lazy" width="600" height="375">
               <span class="card__badge">Promo</span>
@@ -370,7 +370,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket.html">Labuan Bajo Explorer 4D3N</a></h3>
+            <h3 class="card__title"><a href="detail-paket.php">Labuan Bajo Explorer 4D3N</a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -386,7 +386,7 @@
               <span class="card__price-value">Rp 5.750.000</span>
             </div>
             <div class="card__footer">
-              <a href="detail-paket.html" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
+              <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Lion Air">
                 <span style="font-size:10px;font-weight:700;color:var(--coral);">JT</span>
               </div>
@@ -396,7 +396,7 @@
 
         <!-- Card 3 -->
         <article class="card reveal reveal--delay-3" data-category="asia">
-          <a href="detail-paket.html">
+          <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?w=600&q=80" alt="Kota Singapura dengan gedung pencakar langit" loading="lazy" width="600" height="375">
               <span class="card__badge badge--teal">Best Seller</span>
@@ -404,7 +404,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Asia</span>
-            <h3 class="card__title"><a href="detail-paket.html">Singapore City Tour 4D3N</a></h3>
+            <h3 class="card__title"><a href="detail-paket.php">Singapore City Tour 4D3N</a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -420,7 +420,7 @@
               <span class="card__price-value">Rp 7.500.000</span>
             </div>
             <div class="card__footer">
-              <a href="detail-paket.html" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
+              <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Singapore Airlines">
                 <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">SQ</span>
               </div>
@@ -430,14 +430,14 @@
 
         <!-- Card 4 -->
         <article class="card reveal reveal--delay-4" data-category="domestik">
-          <a href="detail-paket.html">
+          <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" alt="Gunung Bromo saat matahari terbit" loading="lazy" width="600" height="375">
             </div>
           </a>
           <div class="card__body">
             <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket.html">Bromo Midnight Tour 2D1N</a></h3>
+            <h3 class="card__title"><a href="detail-paket.php">Bromo Midnight Tour 2D1N</a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -453,7 +453,7 @@
               <span class="card__price-value">Rp 1.850.000</span>
             </div>
             <div class="card__footer">
-              <a href="detail-paket.html" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
+              <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Citilink">
                 <span style="font-size:10px;font-weight:700;color:var(--emerald);">QG</span>
               </div>
@@ -463,7 +463,7 @@
 
         <!-- Card 5 -->
         <article class="card reveal reveal--delay-5" data-category="asia">
-          <a href="detail-paket.html">
+          <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80" alt="Pemandangan alam Malaysia yang indah" loading="lazy" width="600" height="375">
               <span class="card__badge">Promo</span>
@@ -471,7 +471,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Asia</span>
-            <h3 class="card__title"><a href="detail-paket.html">Malaysia Kuala Lumpur 5D4N</a></h3>
+            <h3 class="card__title"><a href="detail-paket.php">Malaysia Kuala Lumpur 5D4N</a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -487,7 +487,7 @@
               <span class="card__price-value">Rp 6.200.000</span>
             </div>
             <div class="card__footer">
-              <a href="detail-paket.html" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
+              <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Malaysia Airlines">
                 <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">MH</span>
               </div>
@@ -497,7 +497,7 @@
 
         <!-- Card 6 -->
         <article class="card reveal reveal--delay-6" data-category="domestik">
-          <a href="detail-paket.html">
+          <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600&q=80" alt="Kepulauan Raja Ampat dengan air kristal" loading="lazy" width="600" height="375">
               <span class="card__badge">Promo</span>
@@ -505,7 +505,7 @@
           </a>
           <div class="card__body">
             <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket.html">Raja Ampat Paradise 6D5N</a></h3>
+            <h3 class="card__title"><a href="detail-paket.php">Raja Ampat Paradise 6D5N</a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -521,7 +521,7 @@
               <span class="card__price-value">Rp 9.800.000</span>
             </div>
             <div class="card__footer">
-              <a href="detail-paket.html" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
+              <a href="detail-paket.php" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
               <div class="card__airline" title="Garuda Indonesia">
                 <span style="font-size:10px;font-weight:700;color:var(--teal-dark);">GA</span>
               </div>
@@ -532,7 +532,7 @@
       </div>
 
       <div class="packages__more">
-        <a href="paket-wisata.html" class="btn btn--dark">VIEW MORE</a>
+        <a href="paket-wisata.php" class="btn btn--dark">VIEW MORE</a>
       </div>
     </div>
   </section>
@@ -552,7 +552,7 @@
 
         <!-- Tahun Baru -->
         <article class="card">
-          <a href="paket-wisata.html?kategori=tahun-baru">
+          <a href="paket-wisata.php?kategori=tahun-baru">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=80" alt="Pantai untuk perayaan Tahun Baru" loading="lazy" width="500" height="313">
               <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--teal-primary);color:var(--near-black);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Tahun Baru</span>
@@ -560,19 +560,19 @@
           </a>
           <div class="card__body">
             <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata.html?kategori=tahun-baru">Paket Tahun Baru</a></h3>
+            <h3 class="card__title"><a href="paket-wisata.php?kategori=tahun-baru">Paket Tahun Baru</a></h3>
             <p class="card__text">Rayakan pergantian tahun di destinasi impian dengan keluarga dan sahabat.</p>
             <div class="card__price">
               <span class="card__price-label">Start From</span>
               <span class="card__price-value">Rp 3.500.000</span>
             </div>
-            <a href="paket-wisata.html?kategori=tahun-baru" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
+            <a href="paket-wisata.php?kategori=tahun-baru" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
           </div>
         </article>
 
         <!-- Natal -->
         <article class="card">
-          <a href="paket-wisata.html?kategori=natal">
+          <a href="paket-wisata.php?kategori=natal">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=80" alt="Liburan Natal di pegunungan" loading="lazy" width="500" height="313">
               <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--coral);color:var(--white);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Natal</span>
@@ -580,19 +580,19 @@
           </a>
           <div class="card__body">
             <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata.html?kategori=natal">Paket Natal</a></h3>
+            <h3 class="card__title"><a href="paket-wisata.php?kategori=natal">Paket Natal</a></h3>
             <p class="card__text">Rayakan natal dengan suasana berbeda di destinasi wisata pilihan.</p>
             <div class="card__price">
               <span class="card__price-label">Start From</span>
               <span class="card__price-value">Rp 4.200.000</span>
             </div>
-            <a href="paket-wisata.html?kategori=natal" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
+            <a href="paket-wisata.php?kategori=natal" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
           </div>
         </article>
 
         <!-- Idul Fitri -->
         <article class="card">
-          <a href="paket-wisata.html?kategori=idul-fitri">
+          <a href="paket-wisata.php?kategori=idul-fitri">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=500&q=80" alt="Liburan Idul Fitri bersama keluarga" loading="lazy" width="500" height="313">
               <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--emerald);color:var(--white);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Idul Fitri</span>
@@ -600,19 +600,19 @@
           </a>
           <div class="card__body">
             <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata.html?kategori=idul-fitri">Paket Idul Fitri</a></h3>
+            <h3 class="card__title"><a href="paket-wisata.php?kategori=idul-fitri">Paket Idul Fitri</a></h3>
             <p class="card__text">Libur Lebaran semakin bermakna dengan wisata bersama keluarga besar.</p>
             <div class="card__price">
               <span class="card__price-label">Start From</span>
               <span class="card__price-value">Rp 3.800.000</span>
             </div>
-            <a href="paket-wisata.html?kategori=idul-fitri" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
+            <a href="paket-wisata.php?kategori=idul-fitri" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
           </div>
         </article>
 
         <!-- Libur Sekolah -->
         <article class="card">
-          <a href="paket-wisata.html?kategori=libur-sekolah">
+          <a href="paket-wisata.php?kategori=libur-sekolah">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=500&q=80" alt="Liburan sekolah di pantai" loading="lazy" width="500" height="313">
               <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--amber);color:var(--near-black);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Libur Sekolah</span>
@@ -620,19 +620,19 @@
           </a>
           <div class="card__body">
             <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata.html?kategori=libur-sekolah">Paket Libur Sekolah</a></h3>
+            <h3 class="card__title"><a href="paket-wisata.php?kategori=libur-sekolah">Paket Libur Sekolah</a></h3>
             <p class="card__text">Isi liburan sekolah anak dengan petualangan seru dan edukatif.</p>
             <div class="card__price">
               <span class="card__price-label">Start From</span>
               <span class="card__price-value">Rp 2.900.000</span>
             </div>
-            <a href="paket-wisata.html?kategori=libur-sekolah" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
+            <a href="paket-wisata.php?kategori=libur-sekolah" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
           </div>
         </article>
 
         <!-- Imlek -->
         <article class="card">
-          <a href="paket-wisata.html?kategori=imlek">
+          <a href="paket-wisata.php?kategori=imlek">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80" alt="Liburan Imlek ke destinasi favorit" loading="lazy" width="500" height="313">
               <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--coral);color:var(--white);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Imlek</span>
@@ -640,13 +640,13 @@
           </a>
           <div class="card__body">
             <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata.html?kategori=imlek">Paket Imlek</a></h3>
+            <h3 class="card__title"><a href="paket-wisata.php?kategori=imlek">Paket Imlek</a></h3>
             <p class="card__text">Sambut tahun baru Imlek dengan liburan istimewa bersama keluarga.</p>
             <div class="card__price">
               <span class="card__price-label">Start From</span>
               <span class="card__price-value">Rp 5.100.000</span>
             </div>
-            <a href="paket-wisata.html?kategori=imlek" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
+            <a href="paket-wisata.php?kategori=imlek" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
           </div>
         </article>
 
@@ -668,7 +668,7 @@
       <div class="categories__grid">
 
         <!-- Wisata Religi -->
-        <a href="paket-wisata.html?kategori=religi" class="category-card reveal reveal--delay-1">
+        <a href="paket-wisata.php?kategori=religi" class="category-card reveal reveal--delay-1">
           <img src="https://images.unsplash.com/photo-1564415637254-92c66292cd64?w=600&q=80" alt="Wisata Religi - Masjid dan tempat ibadah" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
@@ -679,7 +679,7 @@
         </a>
 
         <!-- Wisata Edukasi -->
-        <a href="paket-wisata.html?kategori=edukasi" class="category-card reveal reveal--delay-2">
+        <a href="paket-wisata.php?kategori=edukasi" class="category-card reveal reveal--delay-2">
           <img src="https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=600&q=80" alt="Wisata Edukasi - Belajar dan berwisata" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
@@ -690,7 +690,7 @@
         </a>
 
         <!-- Bulan Madu -->
-        <a href="paket-wisata.html?kategori=bulan-madu" class="category-card reveal reveal--delay-3">
+        <a href="paket-wisata.php?kategori=bulan-madu" class="category-card reveal reveal--delay-3">
           <img src="https://images.unsplash.com/photo-1546514355-7fdc90ccbd03?w=600&q=80" alt="Bulan Madu - Romantis di pantai" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
@@ -701,7 +701,7 @@
         </a>
 
         <!-- Wisata Keluarga -->
-        <a href="paket-wisata.html?kategori=keluarga" class="category-card reveal reveal--delay-4">
+        <a href="paket-wisata.php?kategori=keluarga" class="category-card reveal reveal--delay-4">
           <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=80" alt="Wisata Keluarga - Berlibur bersama" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
@@ -712,7 +712,7 @@
         </a>
 
         <!-- Wisata Perusahaan -->
-        <a href="paket-wisata.html?kategori=perusahaan" class="category-card reveal reveal--delay-5">
+        <a href="paket-wisata.php?kategori=perusahaan" class="category-card reveal reveal--delay-5">
           <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=80" alt="Wisata Perusahaan - Team building dan outing" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
@@ -723,7 +723,7 @@
         </a>
 
         <!-- Wisata Adventure -->
-        <a href="paket-wisata.html?kategori=adventure" class="category-card reveal reveal--delay-6">
+        <a href="paket-wisata.php?kategori=adventure" class="category-card reveal reveal--delay-6">
           <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&q=80" alt="Wisata Adventure - Petualangan alam" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
@@ -752,7 +752,7 @@
 
         <!-- Blog Card 1 -->
         <article class="card blog-card reveal reveal--delay-1">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?w=600&q=80" alt="Tips packing efisien untuk liburan" loading="lazy" width="600" height="375">
               <span class="card__badge card__badge--teal">Tips</span>
@@ -760,11 +760,11 @@
           </a>
           <div class="card__body">
             <span class="card__category">Tips Traveling</span>
-            <h3 class="card__title"><a href="blog-detail.html">10 Tips Packing Efisien untuk Liburan Panjang</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">10 Tips Packing Efisien untuk Liburan Panjang</a></h3>
             <p class="card__text">Packing tidak perlu ribet! Ikuti tips berikut agar koper Anda tetap ringan namun semua kebutuhan terpenuhi selama liburan.</p>
             <div class="card__footer">
               <span class="blog-card__date">15 Februari 2026</span>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 Baca Selengkapnya
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -774,7 +774,7 @@
 
         <!-- Blog Card 2 -->
         <article class="card blog-card reveal reveal--delay-2">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Destinasi wisata tersembunyi di Indonesia" loading="lazy" width="600" height="375">
               <span class="card__badge card__badge--teal">Destinasi</span>
@@ -782,11 +782,11 @@
           </a>
           <div class="card__body">
             <span class="card__category">Fun Facts Destinasi</span>
-            <h3 class="card__title"><a href="blog-detail.html">5 Destinasi Tersembunyi di Indonesia Timur</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">5 Destinasi Tersembunyi di Indonesia Timur</a></h3>
             <p class="card__text">Indonesia Timur menyimpan keindahan alam yang luar biasa. Berikut 5 destinasi tersembunyi yang wajib Anda kunjungi.</p>
             <div class="card__footer">
               <span class="blog-card__date">10 Februari 2026</span>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 Baca Selengkapnya
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -796,7 +796,7 @@
 
         <!-- Blog Card 3 -->
         <article class="card blog-card reveal reveal--delay-3">
-          <a href="blog-detail.html">
+          <a href="blog-detail.php">
             <div class="blog-card__image card__image">
               <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600&q=80" alt="Panduan wisata hemat ke Singapura" loading="lazy" width="600" height="375">
               <span class="card__badge card__badge--teal">Panduan</span>
@@ -804,11 +804,11 @@
           </a>
           <div class="card__body">
             <span class="card__category">Panduan Wisata</span>
-            <h3 class="card__title"><a href="blog-detail.html">Panduan Lengkap Wisata Hemat ke Singapura</a></h3>
+            <h3 class="card__title"><a href="blog-detail.php">Panduan Lengkap Wisata Hemat ke Singapura</a></h3>
             <p class="card__text">Berlibur ke Singapura tidak harus mahal! Simak panduan lengkap kami untuk menikmati Singapura dengan budget terjangkau.</p>
             <div class="card__footer">
               <span class="blog-card__date">5 Februari 2026</span>
-              <a href="blog-detail.html" class="blog-card__link">
+              <a href="blog-detail.php" class="blog-card__link">
                 Baca Selengkapnya
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -819,7 +819,7 @@
       </div>
 
       <div class="packages__more" style="margin-top:var(--space-12);">
-        <a href="blog.html" class="btn btn--secondary">LIHAT SEMUA ARTIKEL</a>
+        <a href="blog.php" class="btn btn--secondary">LIHAT SEMUA ARTIKEL</a>
       </div>
     </div>
   </section>
@@ -1091,11 +1091,11 @@
         <div>
           <h4 class="footer__heading">Layanan</h4>
           <nav class="footer__links" aria-label="Layanan SnD Tour">
-            <a href="paket-wisata.html" class="footer__link">Paket Wisata</a>
-            <a href="outbond.html" class="footer__link">Outbond</a>
-            <a href="catering.html" class="footer__link">Catering</a>
-            <a href="blog.html" class="footer__link">Blog</a>
-            <a href="galeri.html" class="footer__link">Galeri</a>
+            <a href="paket-wisata.php" class="footer__link">Paket Wisata</a>
+            <a href="outbond.php" class="footer__link">Outbond</a>
+            <a href="catering.php" class="footer__link">Catering</a>
+            <a href="blog.php" class="footer__link">Blog</a>
+            <a href="galeri.php" class="footer__link">Galeri</a>
           </nav>
         </div>
 
@@ -1103,14 +1103,14 @@
         <div>
           <h4 class="footer__heading">Kategori Tour</h4>
           <nav class="footer__links" aria-label="Kategori Tour">
-            <a href="paket-wisata.html?kategori=domestik" class="footer__link">Tour Domestik</a>
-            <a href="paket-wisata.html?kategori=asia" class="footer__link">Tour Asia</a>
-            <a href="outbond.html" class="footer__link">Outbond</a>
-            <a href="catering.html" class="footer__link">Catering</a>
-            <a href="paket-wisata.html?kategori=religi" class="footer__link">Wisata Religi</a>
-            <a href="paket-wisata.html?kategori=edukasi" class="footer__link">Wisata Edukasi</a>
-            <a href="paket-wisata.html?kategori=bulan-madu" class="footer__link">Bulan Madu</a>
-            <a href="paket-wisata.html?kategori=keluarga" class="footer__link">Wisata Keluarga</a>
+            <a href="paket-wisata.php?kategori=domestik" class="footer__link">Tour Domestik</a>
+            <a href="paket-wisata.php?kategori=asia" class="footer__link">Tour Asia</a>
+            <a href="outbond.php" class="footer__link">Outbond</a>
+            <a href="catering.php" class="footer__link">Catering</a>
+            <a href="paket-wisata.php?kategori=religi" class="footer__link">Wisata Religi</a>
+            <a href="paket-wisata.php?kategori=edukasi" class="footer__link">Wisata Edukasi</a>
+            <a href="paket-wisata.php?kategori=bulan-madu" class="footer__link">Bulan Madu</a>
+            <a href="paket-wisata.php?kategori=keluarga" class="footer__link">Wisata Keluarga</a>
           </nav>
         </div>
 
