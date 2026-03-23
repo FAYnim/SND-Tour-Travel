@@ -209,7 +209,7 @@
 
       <!-- Featured Image -->
       <div class="blog-detail__featured">
-        <img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?w=1200&q=80" alt="Koper dan perlengkapan packing untuk liburan keluarga" loading="eager" width="1200" height="675">
+        <img src="./images/tips-packing-untuk-liburan-keluarga.webp" alt="Koper dan perlengkapan packing untuk liburan keluarga" loading="eager" width="1200" height="675">
       </div>
 
       <!-- Article Content -->

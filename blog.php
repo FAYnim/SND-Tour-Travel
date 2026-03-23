@@ -185,7 +185,7 @@
         <article class="card blog-card reveal reveal--delay-1" data-category="tips">
           <a href="blog-detail.php">
             <div class="blog-card__image card__image">
-              <img src="https://images.unsplash.com/photo-1488646472563-ce91c0cc1390?w=600&q=80" alt="Tips packing efisien untuk liburan keluarga" loading="lazy" width="600" height="375">
+              <img src="./images/tips-packing-untuk-liburan-keluarga.webp" alt="Tips packing efisien untuk liburan keluarga" loading="lazy" width="600" height="375">
               <span class="card__badge card__badge--teal">Tips Traveling</span>
             </div>
           </a>
