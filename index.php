@@ -967,33 +967,33 @@
       </div>
       <div class="partners__logos">
         <div class="partner-logo" title="PT Telkom Indonesia">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-body);font-weight:600;font-size:11px;color:var(--gray-500);text-align:center;line-height:1.2;">PT Telkom<br>Indonesia</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/telkom-indonesia.png" alt="PT Telkom Indonesia" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Bank BCA">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--gray-500);text-align:center;line-height:1.2;">Bank BCA</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/bank-bca.png" alt="Bank BCA" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Pertamina">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-body);font-weight:600;font-size:12px;color:var(--gray-500);text-align:center;line-height:1.2;">Pertamina</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/pertamina.png" alt="Pertamina" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Unilever">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-body);font-weight:600;font-size:12px;color:var(--gray-500);text-align:center;line-height:1.2;">Unilever</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/unilever.png" alt="Unilever" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="PLN">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-body);font-weight:600;font-size:14px;color:var(--gray-500);text-align:center;line-height:1.2;">PLN</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/pln.png" alt="PLN" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
         <div class="partner-logo" title="Astra International">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:8px;">
-            <span style="font-family:var(--font-body);font-weight:600;font-size:11px;color:var(--gray-500);text-align:center;line-height:1.2;">Astra<br>International</span>
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--light-gray);border-radius:var(--radius-md);padding:12px;">
+            <img src="images/astra-international.png" alt="Astra International" style="max-width:100%;max-height:100%;object-fit:contain;">
           </div>
         </div>
       </div>
