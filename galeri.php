@@ -189,7 +189,7 @@
 
         <!-- Gallery Item 3: Rice Terrace -->
         <div class="gallery-item reveal reveal--delay-3" data-category="domestik">
-          <img src="https://images.unsplash.com/photo-1570789210967-2cac24f6d023?w=600&q=80" alt="Sawah terasering hijau nan indah" loading="lazy" width="600" height="450">
+          <img src="./images/sawah-terasering.jpg" alt="Sawah terasering hijau nan indah" loading="lazy" width="600" height="450">
           <div class="gallery-item__overlay">
             <span class="gallery-item__caption">Tegallalang Rice Terrace, Bali</span>
           </div>
