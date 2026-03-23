@@ -330,47 +330,212 @@ document.addEventListener('click', (e) => {
 /* ============================================================
    SEARCH / FILTER FUNCTIONALITY
    ============================================================ */
+
+// Whitelist nilai yang diizinkan untuk setiap parameter filter (SEC-001)
+var FILTER_WHITELIST = {
+  kategori: ['semua', 'religi', 'edukasi', 'bulan-madu', 'keluarga', 'perusahaan', 'adventure'],
+  durasi: ['', '2d1n', '3d2n', '4d3n', '5d4n', '6d5n'],
+  sort: ['', 'harga-rendah', 'harga-tinggi', 'populer', 'durasi']
+};
+
+// Satu sumber state filter (PAT-001)
+var currentFilters = { kategori: 'semua', durasi: '', sort: '' };
+
 function initSearchFilter() {
-  const searchForm = document.querySelector('.search-box');
-  if (!searchForm) return;
+  // ---- Search box (halaman lain, mis. index.php) ----
+  var searchForm = document.querySelector('.search-box');
+  if (searchForm) {
+    var searchBtn = searchForm.querySelector('.search-box__btn .btn');
+    if (searchBtn) {
+      searchBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var category = searchForm.querySelector('.search-box__select');
+        var keyword = searchForm.querySelector('.search-box__input');
+        var params = new URLSearchParams();
+        if (category && category.value) params.set('kategori', category.value);
+        if (keyword && keyword.value) params.set('q', keyword.value);
+        window.location.href = 'paket-wisata.php' + (params.toString() ? '?' + params.toString() : '');
+      });
+    }
+  }
 
-  const searchBtn = searchForm.querySelector('.search-box__btn .btn');
-  if (searchBtn) {
-    searchBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const category = searchForm.querySelector('.search-box__select');
-      const keyword = searchForm.querySelector('.search-box__input');
+  // ---- Filter listing (hanya pada paket-wisata.php) ----
+  var grid = document.querySelector('.packages__grid');
+  if (!grid) return; // Bukan halaman listing, tidak lanjut (RISK-002)
 
-      // For now, redirect to paket-wisata page with query params
-      const params = new URLSearchParams();
-      if (category && category.value) params.set('kategori', category.value);
-      if (keyword && keyword.value) params.set('q', keyword.value);
+  var filterTags = document.querySelectorAll('.filter-tag');
+  var selectDurasi = document.getElementById('filterDurasi');
+  var selectSort = document.getElementById('filterSort');
 
-      window.location.href = 'paket-wisata.php' + (params.toString() ? '?' + params.toString() : '');
+  // Inisialisasi state dari URL (TASK-007)
+  currentFilters = readFiltersFromUrl();
+  syncControlsToState(filterTags, selectDurasi, selectSort);
+  applyPackageFilters();
+
+  // Listener kategori (TASK-004)
+  filterTags.forEach(function(tag) {
+    tag.addEventListener('click', function() {
+      currentFilters.kategori = tag.dataset.filter || 'semua';
+      writeFiltersToUrl(currentFilters);
+      syncControlsToState(filterTags, selectDurasi, selectSort);
+      applyPackageFilters();
+    });
+  });
+
+  // Listener durasi (TASK-004)
+  if (selectDurasi) {
+    selectDurasi.addEventListener('change', function() {
+      currentFilters.durasi = selectDurasi.value;
+      writeFiltersToUrl(currentFilters);
+      applyPackageFilters();
     });
   }
 
-  // Filter tags on listing page
-  const filterTags = document.querySelectorAll('.filter-tag');
-  filterTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-      filterTags.forEach(t => t.classList.remove('filter-tag--active'));
-      tag.classList.add('filter-tag--active');
-      filterPackages(tag.dataset.filter);
+  // Listener sort (TASK-004)
+  if (selectSort) {
+    selectSort.addEventListener('change', function() {
+      currentFilters.sort = selectSort.value;
+      writeFiltersToUrl(currentFilters);
+      applyPackageFilters();
     });
+  }
+
+  // Tombol reset pada empty state (TASK-009)
+  var resetBtn = document.getElementById('packagesResetBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      currentFilters = { kategori: 'semua', durasi: '', sort: '' };
+      writeFiltersToUrl(currentFilters);
+      syncControlsToState(filterTags, selectDurasi, selectSort);
+      applyPackageFilters();
+    });
+  }
+}
+
+/* ---- Fungsi murni utilitas (GUD-001) ---- */
+
+function getPackageCards() {
+  return Array.from(document.querySelectorAll('.packages__grid .card'));
+}
+
+function parsePrice(card) {
+  var val = parseInt(card.dataset.price, 10);
+  return isNaN(val) ? 0 : val;
+}
+
+function parseDurationDays(card) {
+  var dur = (card.dataset.duration || '').toLowerCase();
+  // Format: NdMn — ambil angka hari (N)
+  var match = dur.match(/^(\d+)d/);
+  return match ? parseInt(match[1], 10) : 0;
+}
+
+function parsePopularity(card) {
+  var val = parseInt(card.dataset.popularity, 10);
+  return isNaN(val) ? 0 : val;
+}
+
+function readFiltersFromUrl() {
+  var params = new URLSearchParams(window.location.search);
+  var kategori = params.get('kategori') || 'semua';
+  var durasi = params.get('durasi') || '';
+  var sort = params.get('sort') || '';
+
+  // Validasi whitelist (SEC-001) — nilai tidak dikenal di-fallback ke default
+  if (FILTER_WHITELIST.kategori.indexOf(kategori) === -1) kategori = 'semua';
+  if (FILTER_WHITELIST.durasi.indexOf(durasi) === -1) durasi = '';
+  if (FILTER_WHITELIST.sort.indexOf(sort) === -1) sort = '';
+
+  return { kategori: kategori, durasi: durasi, sort: sort };
+}
+
+function writeFiltersToUrl(filters) {
+  var params = new URLSearchParams();
+  if (filters.kategori && filters.kategori !== 'semua') params.set('kategori', filters.kategori);
+  if (filters.durasi) params.set('durasi', filters.durasi);
+  if (filters.sort) params.set('sort', filters.sort);
+  var qs = params.toString();
+  var newUrl = window.location.pathname + (qs ? '?' + qs : '');
+  history.replaceState(null, '', newUrl);
+}
+
+function syncControlsToState(filterTags, selectDurasi, selectSort) {
+  // Sinkronkan tombol kategori
+  filterTags.forEach(function(tag) {
+    var isActive = (tag.dataset.filter === currentFilters.kategori) ||
+                   (currentFilters.kategori === 'semua' && tag.dataset.filter === 'semua');
+    tag.classList.toggle('filter-tag--active', isActive);
+  });
+  // Sinkronkan dropdown durasi
+  if (selectDurasi) selectDurasi.value = currentFilters.durasi;
+  // Sinkronkan dropdown sort
+  if (selectSort) selectSort.value = currentFilters.sort;
+}
+
+function applyPackageFilters() {
+  var cards = getPackageCards();
+  var visible = [];
+  var hidden = [];
+
+  // Filter (REQ-001, REQ-002, REQ-004)
+  cards.forEach(function(card) {
+    var okKategori = currentFilters.kategori === 'semua' || card.dataset.category === currentFilters.kategori;
+    var okDurasi = !currentFilters.durasi || (card.dataset.duration || '').toLowerCase() === currentFilters.durasi;
+    if (okKategori && okDurasi) {
+      visible.push(card);
+    } else {
+      hidden.push(card);
+    }
+  });
+
+  // Sort visible cards (REQ-003, TASK-006)
+  var sorted = sortCards(visible, currentFilters.sort, cards);
+
+  // Terapkan ke DOM — sembunyikan yang tidak cocok
+  hidden.forEach(function(card) { card.style.display = 'none'; });
+
+  // Reorder dan tampilkan visible (PRF-001 — satu event loop, tanpa network)
+  var grid = document.querySelector('.packages__grid');
+  if (grid) {
+    sorted.forEach(function(card) {
+      card.style.display = '';
+      grid.appendChild(card); // pindahkan ke posisi urutan baru
+    });
+  }
+
+  updateResultUi(sorted.length);
+}
+
+function sortCards(cards, sortBy, allCards) {
+  if (!sortBy) {
+    // Kembalikan urutan DOM awal (TASK-006)
+    return cards.slice().sort(function(a, b) {
+      return allCards.indexOf(a) - allCards.indexOf(b);
+    });
+  }
+  return cards.slice().sort(function(a, b) {
+    if (sortBy === 'harga-rendah') return parsePrice(a) - parsePrice(b);
+    if (sortBy === 'harga-tinggi') return parsePrice(b) - parsePrice(a);
+    if (sortBy === 'populer') return parsePopularity(b) - parsePopularity(a);
+    if (sortBy === 'durasi') return parseDurationDays(a) - parseDurationDays(b);
+    return 0;
   });
 }
 
-function filterPackages(category) {
-  const cards = document.querySelectorAll('.packages__grid .card');
-  cards.forEach(card => {
-    if (!category || category === 'semua') {
-      card.style.display = '';
-      return;
-    }
-    const cardCategory = card.dataset.category;
-    card.style.display = (cardCategory === category) ? '' : 'none';
-  });
+function updateResultUi(count) {
+  // Result count (TASK-008)
+  var resultEl = document.getElementById('packagesResultCount');
+  if (resultEl) {
+    resultEl.textContent = count > 0
+      ? 'Menampilkan ' + count + ' paket wisata'
+      : '';
+  }
+
+  // Empty state (TASK-008, REQ-006)
+  var emptyEl = document.getElementById('packagesEmptyState');
+  if (emptyEl) {
+    emptyEl.style.display = count === 0 ? '' : 'none';
+  }
 }
 
 /* ============================================================

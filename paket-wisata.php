@@ -392,10 +392,13 @@
        ============================================================ -->
   <section class="section packages" id="paket-listing">
     <div class="container">
-      <div class="packages__grid">
+      <!-- Result count — diperbarui JS setiap filter berubah -->
+      <p id="packagesResultCount" aria-live="polite" class="packages__result-count"></p>
+
+      <div class="packages__grid" aria-live="polite" aria-atomic="false">
 
         <!-- Card 1: Pesona Bali Spiritual Journey -->
-        <article class="card reveal reveal--delay-1" data-category="religi">
+        <article class="card reveal reveal--delay-1" data-category="religi" data-duration="5d4n" data-price="4250000" data-popularity="85">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Pemandangan sawah terasering dan pura di Bali" loading="lazy" width="600" height="375">
@@ -429,7 +432,7 @@
         </article>
 
         <!-- Card 2: Labuan Bajo Explorer -->
-        <article class="card reveal reveal--delay-2" data-category="adventure">
+        <article class="card reveal reveal--delay-2" data-category="adventure" data-duration="4d3n" data-price="5750000" data-popularity="92">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=600&q=80" alt="Panorama laut biru dan pulau-pulau di Labuan Bajo" loading="lazy" width="600" height="375">
@@ -463,7 +466,7 @@
         </article>
 
         <!-- Card 3: Singapore City Discovery -->
-        <article class="card reveal reveal--delay-3" data-category="keluarga">
+        <article class="card reveal reveal--delay-3" data-category="keluarga" data-duration="4d3n" data-price="7500000" data-popularity="78">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?w=600&q=80" alt="Kota Singapura dengan gedung pencakar langit di malam hari" loading="lazy" width="600" height="375">
@@ -497,7 +500,7 @@
         </article>
 
         <!-- Card 4: Jogja Edu-Heritage Tour -->
-        <article class="card reveal reveal--delay-1" data-category="edukasi">
+        <article class="card reveal reveal--delay-1" data-category="edukasi" data-duration="3d2n" data-price="2850000" data-popularity="70">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" alt="Candi Borobudur saat matahari terbit di Yogyakarta" loading="lazy" width="600" height="375">
@@ -531,7 +534,7 @@
         </article>
 
         <!-- Card 5: Maldives Honeymoon Escape -->
-        <article class="card reveal reveal--delay-2" data-category="bulan-madu">
+        <article class="card reveal reveal--delay-2" data-category="bulan-madu" data-duration="5d4n" data-price="15800000" data-popularity="65">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80" alt="Resort mewah di tepi laut dengan pemandangan sunset romantis" loading="lazy" width="600" height="375">
@@ -565,7 +568,7 @@
         </article>
 
         <!-- Card 6: Raja Ampat Diving Paradise -->
-        <article class="card reveal reveal--delay-3" data-category="adventure">
+        <article class="card reveal reveal--delay-3" data-category="adventure" data-duration="6d5n" data-price="9800000" data-popularity="88">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600&q=80" alt="Kepulauan Raja Ampat dengan air kristal biru kehijauan" loading="lazy" width="600" height="375">
@@ -599,7 +602,7 @@
         </article>
 
         <!-- Card 7: Malang-Batu Family Fun -->
-        <article class="card reveal reveal--delay-1" data-category="keluarga">
+        <article class="card reveal reveal--delay-1" data-category="keluarga" data-duration="3d2n" data-price="1950000" data-popularity="75">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&q=80" alt="Pemandangan kota Malang dengan taman hijau dan pegunungan" loading="lazy" width="600" height="375">
@@ -633,7 +636,7 @@
         </article>
 
         <!-- Card 8: Bangkok-Pattaya Corporate Trip -->
-        <article class="card reveal reveal--delay-2" data-category="perusahaan">
+        <article class="card reveal reveal--delay-2" data-category="perusahaan" data-duration="5d4n" data-price="6900000" data-popularity="60">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Grand Palace dan kuil emas di Bangkok Thailand" loading="lazy" width="600" height="375">
@@ -667,7 +670,7 @@
         </article>
 
         <!-- Card 9: Bromo Midnight Adventure -->
-        <article class="card reveal reveal--delay-3" data-category="adventure">
+        <article class="card reveal reveal--delay-3" data-category="adventure" data-duration="2d1n" data-price="1850000" data-popularity="82">
           <a href="detail-paket.php">
             <div class="card__image">
               <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=600&q=80" alt="Gunung Bromo saat matahari terbit dengan lautan kabut" loading="lazy" width="600" height="375">
@@ -700,6 +703,14 @@
           </div>
         </article>
 
+      </div>
+
+      <!-- Empty State — ditampilkan JS saat tidak ada hasil filter -->
+      <div id="packagesEmptyState" class="packages__empty" style="display:none;" aria-live="polite">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3 class="packages__empty-title">Tidak ada paket ditemukan</h3>
+        <p class="packages__empty-text">Coba ubah atau reset filter untuk melihat lebih banyak paket wisata.</p>
+        <button type="button" class="btn btn--secondary btn--sm" id="packagesResetBtn">Reset Filter</button>
       </div>
 
       <!-- ============================================================

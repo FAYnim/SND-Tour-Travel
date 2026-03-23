@@ -2864,3 +2864,42 @@ p {
   opacity: 1;
   visibility: visible;
 }
+
+/* ============================================================
+   PACKAGES — Result Count & Empty State
+   ============================================================ */
+.packages__result-count {
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+  margin-bottom: var(--space-4);
+  min-height: 1.25em; /* cegah layout shift saat kosong */
+}
+
+.packages__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  color: var(--gray-500);
+}
+
+.packages__empty svg {
+  opacity: 0.35;
+  color: var(--teal);
+}
+
+.packages__empty-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+.packages__empty-text {
+  font-size: var(--text-base);
+  margin: 0;
+  max-width: 360px;
+}
