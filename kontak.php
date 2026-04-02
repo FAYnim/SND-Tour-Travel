@@ -33,7 +33,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23008080'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='white' font-family='Georgia' font-size='48' font-weight='bold'%3ESnD%3C/text%3E%3C/svg%3E">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://sndtour.com/kontak.php">
+  <link rel="canonical" href="https://sndtour.com/kontak">
 
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,7 +110,7 @@
   <header class="header" id="header">
     <div class="header__inner">
       <!-- Logo -->
-      <a href="index.php" class="header__logo" aria-label="SnD Tour Travel - Halaman Utama">
+      <a href="index" class="header__logo" aria-label="SnD Tour Travel - Halaman Utama">
         <div class="header__logo-icon">SnD</div>
         <div>
           <span class="header__logo-text">SnD Tour</span>
@@ -123,63 +123,63 @@
         <ul style="display:flex;align-items:center;gap:var(--space-1);list-style:none;margin:0;padding:0;">
           <!-- HOME -->
           <li class="nav__item">
-            <a href="index.php" class="nav__link">HOME</a>
+            <a href="index" class="nav__link">HOME</a>
           </li>
 
           <!-- PROFIL (Dropdown) -->
           <li class="nav__item">
-            <a href="profil.php" class="nav__link">
+            <a href="profil" class="nav__link">
               PROFIL
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="nav__dropdown">
-              <a href="profil.php#tentang-kami" class="nav__dropdown-link">Tentang Kami</a>
-              <a href="profil.php#visi-misi" class="nav__dropdown-link">Visi &amp; Misi</a>
+              <a href="profil#tentang-kami" class="nav__dropdown-link">Tentang Kami</a>
+              <a href="profil#visi-misi" class="nav__dropdown-link">Visi &amp; Misi</a>
             </div>
           </li>
 
           <!-- PAKET WISATA (Dropdown) -->
           <li class="nav__item">
-            <a href="paket-wisata.php" class="nav__link">
+            <a href="paket-wisata" class="nav__link">
               PAKET WISATA
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </a>
             <div class="nav__dropdown">
-              <a href="paket-wisata.php?kategori=domestik" class="nav__dropdown-link">Domestik</a>
-              <a href="paket-wisata.php?kategori=asia" class="nav__dropdown-link">Asia</a>
+              <a href="paket-wisata?kategori=domestik" class="nav__dropdown-link">Domestik</a>
+              <a href="paket-wisata?kategori=asia" class="nav__dropdown-link">Asia</a>
             </div>
           </li>
 
           <!-- OUTBOND -->
           <li class="nav__item">
-            <a href="outbond.php" class="nav__link">OUTBOND</a>
+            <a href="outbond" class="nav__link">OUTBOND</a>
           </li>
 
           <!-- CATERING -->
           <li class="nav__item">
-            <a href="catering.php" class="nav__link">CATERING</a>
+            <a href="catering" class="nav__link">CATERING</a>
           </li>
 
           <!-- BLOG -->
           <li class="nav__item">
-            <a href="blog.php" class="nav__link">BLOG</a>
+            <a href="blog" class="nav__link">BLOG</a>
           </li>
 
           <!-- GALERI -->
           <li class="nav__item">
-            <a href="galeri.php" class="nav__link">GALERI</a>
+            <a href="galeri" class="nav__link">GALERI</a>
           </li>
 
           <!-- KONTAK (Active) -->
           <li class="nav__item">
-            <a href="kontak.php" class="nav__link nav__link--active">KONTAK</a>
+            <a href="kontak" class="nav__link nav__link--active">KONTAK</a>
           </li>
         </ul>
       </nav>
 
       <!-- Header CTA -->
       <div class="header__cta">
-        <a href="kontak.php" class="btn btn--primary btn--sm">HUBUNGI KAMI</a>
+        <a href="kontak" class="btn btn--primary btn--sm">HUBUNGI KAMI</a>
       </div>
 
       <!-- Mobile Hamburger Toggle -->
@@ -200,7 +200,7 @@
     </div>
     <div class="container page-header__content">
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.php">Home</a>
+        <a href="index">Home</a>
         <span class="breadcrumb__sep">/</span>
         <span>Kontak</span>
       </nav>
@@ -351,11 +351,11 @@
         <div>
           <h4 class="footer__heading">Layanan</h4>
           <nav class="footer__links" aria-label="Layanan SnD Tour">
-            <a href="paket-wisata.php" class="footer__link">Paket Wisata</a>
-            <a href="outbond.php" class="footer__link">Outbond</a>
-            <a href="catering.php" class="footer__link">Catering</a>
-            <a href="blog.php" class="footer__link">Blog</a>
-            <a href="galeri.php" class="footer__link">Galeri</a>
+            <a href="paket-wisata" class="footer__link">Paket Wisata</a>
+            <a href="outbond" class="footer__link">Outbond</a>
+            <a href="catering" class="footer__link">Catering</a>
+            <a href="blog" class="footer__link">Blog</a>
+            <a href="galeri" class="footer__link">Galeri</a>
           </nav>
         </div>
 
@@ -363,14 +363,14 @@
         <div>
           <h4 class="footer__heading">Kategori Tour</h4>
           <nav class="footer__links" aria-label="Kategori Tour">
-            <a href="paket-wisata.php?kategori=domestik" class="footer__link">Tour Domestik</a>
-            <a href="paket-wisata.php?kategori=asia" class="footer__link">Tour Asia</a>
-            <a href="outbond.php" class="footer__link">Outbond</a>
-            <a href="catering.php" class="footer__link">Catering</a>
-            <a href="paket-wisata.php?kategori=religi" class="footer__link">Wisata Religi</a>
-            <a href="paket-wisata.php?kategori=edukasi" class="footer__link">Wisata Edukasi</a>
-            <a href="paket-wisata.php?kategori=bulan-madu" class="footer__link">Bulan Madu</a>
-            <a href="paket-wisata.php?kategori=keluarga" class="footer__link">Wisata Keluarga</a>
+            <a href="paket-wisata?kategori=domestik" class="footer__link">Tour Domestik</a>
+            <a href="paket-wisata?kategori=asia" class="footer__link">Tour Asia</a>
+            <a href="outbond" class="footer__link">Outbond</a>
+            <a href="catering" class="footer__link">Catering</a>
+            <a href="paket-wisata?kategori=religi" class="footer__link">Wisata Religi</a>
+            <a href="paket-wisata?kategori=edukasi" class="footer__link">Wisata Edukasi</a>
+            <a href="paket-wisata?kategori=bulan-madu" class="footer__link">Bulan Madu</a>
+            <a href="paket-wisata?kategori=keluarga" class="footer__link">Wisata Keluarga</a>
           </nav>
         </div>
 

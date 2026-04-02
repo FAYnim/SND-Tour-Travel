@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect URL yang mengandung .php ke versi tanpa ekstensi
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+RewriteRule ^ /%1 [L,R=301]
+
+# 2. Proses URL tanpa ekstensi agar membaca file .php di server
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
