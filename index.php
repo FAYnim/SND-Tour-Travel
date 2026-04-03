@@ -1,3 +1,7 @@
+<?php
+include 'config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -325,22 +329,33 @@
         <div class="section-header__line"></div>
       </div>
       <div class="packages__grid">
-
-        <!-- Card 1 -->
+        <?php
+          $sql = "select * from manajemen_paket order by created_at desc limit 3";
+          $result = mysqli_query($conn, $sql);
+          while ($row = mysqli_fetch_array($result)) {
+        ?>
         <article class="card reveal reveal--delay-1" data-category="domestik">
           <a href="detail-paket">
             <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Pemandangan sawah terasering di Bali" loading="lazy" width="600" height="375">
-              <span class="card__badge">Promo</span>
+              <img src="<?php
+                $gambar = $row["gambar"];
+                if(str_starts_with($gambar,"uploads/")) {
+                  $gambar = "https://app.faydev.my.id/crm-travel/".$gambar;
+                }
+
+                echo $gambar;
+              
+              ?>" alt="Pemandangan sawah terasering di Bali" loading="lazy" width="600" height="375">
+              <span class="card__badge"><?php echo $row["label"];?></span>
             </div>
           </a>
           <div class="card__body">
             <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket">Pesona Bali 5D4N</a></h3>
+            <h3 class="card__title"><a href="detail-paket"><?php echo $row["nama_paket"]." | ".$row["durasi"];?></a></h3>
             <div class="card__meta">
               <span class="card__meta-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Bali, Indonesia
+                <?php echo $row["lokasi"];?>
               </span>
               <span class="card__duration">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -349,7 +364,7 @@
             </div>
             <div class="card__price">
               <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 4.250.000</span>
+              <span class="card__price-value">Rp <?php echo number_format($row["harga"], 0, ",", ".");?></span>
             </div>
             <div class="card__footer">
               <a href="detail-paket" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
@@ -359,176 +374,9 @@
             </div>
           </div>
         </article>
-
-        <!-- Card 2 -->
-        <article class="card reveal reveal--delay-2" data-category="domestik">
-          <a href="detail-paket">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=600&q=80" alt="Panorama Labuan Bajo dengan laut biru" loading="lazy" width="600" height="375">
-              <span class="card__badge">Promo</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket">Labuan Bajo Explorer 4D3N</a></h3>
-            <div class="card__meta">
-              <span class="card__meta-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                NTT, Indonesia
-              </span>
-              <span class="card__duration">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                4D3N
-              </span>
-            </div>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 5.750.000</span>
-            </div>
-            <div class="card__footer">
-              <a href="detail-paket" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
-              <div class="card__airline" title="Lion Air">
-                <img src="images/lionair.png" alt="Lion Air" style="height:12px;width:auto;object-fit:contain;">
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card reveal reveal--delay-3" data-category="asia">
-          <a href="detail-paket">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?w=600&q=80" alt="Kota Singapura dengan gedung pencakar langit" loading="lazy" width="600" height="375">
-              <span class="card__badge badge--teal">Best Seller</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Asia</span>
-            <h3 class="card__title"><a href="detail-paket">Singapore City Tour 4D3N</a></h3>
-            <div class="card__meta">
-              <span class="card__meta-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Singapura
-              </span>
-              <span class="card__duration">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                4D3N
-              </span>
-            </div>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 7.500.000</span>
-            </div>
-            <div class="card__footer">
-              <a href="detail-paket" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
-              <div class="card__airline" title="Singapore Airlines">
-                <img src="images/singapore-airlines.png" alt="Singapore Airlines" style="height:12px;width:auto;object-fit:contain;">
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="card reveal reveal--delay-4" data-category="domestik">
-          <a href="detail-paket">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80" alt="Gunung Bromo saat matahari terbit" loading="lazy" width="600" height="375">
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket">Bromo Midnight Tour 2D1N</a></h3>
-            <div class="card__meta">
-              <span class="card__meta-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Jawa Timur
-              </span>
-              <span class="card__duration">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                2D1N
-              </span>
-            </div>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 1.850.000</span>
-            </div>
-            <div class="card__footer">
-              <a href="detail-paket" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
-              <div class="card__airline" title="Citilink">
-                <img src="images/citilink.png" alt="Citilink" style="height:10px;width:auto;object-fit:contain;">
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="card reveal reveal--delay-5" data-category="asia">
-          <a href="detail-paket">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80" alt="Pemandangan alam Malaysia yang indah" loading="lazy" width="600" height="375">
-              <span class="card__badge">Promo</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Asia</span>
-            <h3 class="card__title"><a href="detail-paket">Malaysia Kuala Lumpur 5D4N</a></h3>
-            <div class="card__meta">
-              <span class="card__meta-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Malaysia
-              </span>
-              <span class="card__duration">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                5D4N
-              </span>
-            </div>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 6.200.000</span>
-            </div>
-            <div class="card__footer">
-              <a href="detail-paket" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
-              <div class="card__airline" title="Malaysia Airlines">
-                <img src="images/malaysia-airlines.png" alt="Malaysia Airlines" style="height:12px;width:auto;object-fit:contain;">
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="card reveal reveal--delay-6" data-category="domestik">
-          <a href="detail-paket">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1504681869696-d977211a5f4c?w=600&q=80" alt="Kepulauan Raja Ampat dengan air kristal" loading="lazy" width="600" height="375">
-              <span class="card__badge">Promo</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Domestik</span>
-            <h3 class="card__title"><a href="detail-paket">Raja Ampat Paradise 6D5N</a></h3>
-            <div class="card__meta">
-              <span class="card__meta-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Papua Barat
-              </span>
-              <span class="card__duration">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                6D5N
-              </span>
-            </div>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 9.800.000</span>
-            </div>
-            <div class="card__footer">
-              <a href="detail-paket" class="btn btn--secondary btn--sm">LIHAT DETAIL</a>
-              <div class="card__airline" title="Garuda Indonesia">
-                <img src="images/garuda-indonesia.png" alt="Garuda Indonesia" style="height:12px;width:auto;object-fit:contain;">
-              </div>
-            </div>
-          </div>
-        </article>
-
+        <?php
+          }
+        ?>
       </div>
 
       <div class="packages__more">

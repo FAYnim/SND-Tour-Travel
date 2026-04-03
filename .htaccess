@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /
+# RewriteBase /
 
 # 1. Redirect URL yang mengandung .php ke versi tanpa ekstensi
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
