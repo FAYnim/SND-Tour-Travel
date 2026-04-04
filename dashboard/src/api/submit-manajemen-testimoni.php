@@ -13,9 +13,14 @@ $pesan = mysqli_real_escape_string($koneksi, $_POST['pesan']);
 $rating = mysqli_real_escape_string($koneksi, $_POST['rating']);
 $status = mysqli_real_escape_string($koneksi, $_POST['status']);
 $tanggal = mysqli_real_escape_string($koneksi, $_POST['tanggal']);
+$paket_id = isset($_POST['paket_id']) && !empty($_POST['paket_id']) ? mysqli_real_escape_string($koneksi, $_POST['paket_id']) : null;
 
-// Query insert
-$query = "INSERT INTO testimoni (nama_pelanggan, pesan, rating, status, tanggal) VALUES ('$nama_pelanggan', '$pesan', '$rating', '$status', '$tanggal')";
+// Query insert dengan paket_id
+if ($paket_id) {
+    $query = "INSERT INTO testimoni (nama_pelanggan, pesan, rating, status, tanggal, paket_id) VALUES ('$nama_pelanggan', '$pesan', '$rating', '$status', '$tanggal', '$paket_id')";
+} else {
+    $query = "INSERT INTO testimoni (nama_pelanggan, pesan, rating, status, tanggal) VALUES ('$nama_pelanggan', '$pesan', '$rating', '$status', '$tanggal')";
+}
 $submit = mysqli_query($koneksi, $query);
 
 if($submit) {

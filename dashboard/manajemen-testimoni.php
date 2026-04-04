@@ -5,6 +5,15 @@ if($_SESSION['login'] != true) {
     header("Location: login");
 }
 
+// Ambil semua data paket untuk dropdown
+$paketList = [];
+$result = $koneksi->query("SELECT id, nama_paket FROM manajemen_paket ORDER BY nama_paket ASC");
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $paketList[] = $row;
+    }
+}
+
 $page_title = 'Tambah Testimoni';
 $current_page = pathinfo($_SERVER['SCRIPT_NAME'], PATHINFO_FILENAME);
 ?>
@@ -73,15 +82,20 @@ $current_page = pathinfo($_SERVER['SCRIPT_NAME'], PATHINFO_FILENAME);
                                         <input type="text" class="form-control" id="nama_pelanggan" name="nama_pelanggan" placeholder="Contoh: Budi Santoso" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
+                                        <label for="paket_id" class="form-label">Paket Terkait</label>
+                                        <select class="form-select" id="paket_id" name="paket_id">
+                                            <option value="">-- Pilih Paket (Opsional) --</option>
+                                            <?php foreach($paketList as $p): ?>
+                                                <option value="<?php echo $p['id']; ?>"><?php echo htmlspecialchars($p['nama_paket']); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
                                         <label for="tanggal" class="form-label">Tanggal</label>
                                         <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo date('Y-m-d'); ?>">
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="pesan" class="form-label">Pesan Testimoni <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="pesan" name="pesan" rows="4" placeholder="Tulis testimoni dari pelanggan..." required></textarea>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="rating" class="form-label">Rating <span class="text-danger">*</span></label>
                                         <select class="form-select" id="rating" name="rating" required>
@@ -92,6 +106,12 @@ $current_page = pathinfo($_SERVER['SCRIPT_NAME'], PATHINFO_FILENAME);
                                             <option value="1">⭐ (1 - Buruk)</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pesan" class="form-label">Pesan Testimoni <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="pesan" name="pesan" rows="4" placeholder="Tulis testimoni dari pelanggan..." required></textarea>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="status" class="form-label">Status</label>
                                         <select class="form-select" id="status" name="status">
