@@ -1,5 +1,18 @@
 <?php
 include 'config.php';
+
+// Ambil testimoni dari database
+$sql_testimoni = "SELECT t.*, p.nama_paket 
+                  FROM testimoni t 
+                  LEFT JOIN manajemen_paket p ON t.paket_id = p.id 
+                  WHERE t.status = 'Aktif' 
+                  ORDER BY t.tanggal DESC 
+                  LIMIT 3";
+$result_testimoni = mysqli_query($conn, $sql_testimoni);
+$testimoni_list = [];
+while ($row_testimoni = mysqli_fetch_array($result_testimoni)) {
+    $testimoni_list[] = $row_testimoni;
+}
 ?>
 
 <!DOCTYPE html>
@@ -645,62 +658,80 @@ include 'config.php';
 
       <div class="testimonials__slider">
 
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">Pengalaman liburan ke Bali bersama SnD Tour benar-benar luar biasa! Semua sudah terorganisir dengan baik, dari hotel, transportasi, hingga tempat wisata. Tidak perlu pusing mikir apapun, tinggal nikmati saja!</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">AS</div>
-            <div>
-              <div class="testimonial-card__name">Andi Setiawan</div>
-              <div class="testimonial-card__package">Pesona Bali 5D4N</div>
-            </div>
-            <div class="testimonial-card__stars">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <?php if (count($testimoni_list) > 0): ?>
+          <?php foreach ($testimoni_list as $testimoni): ?>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote"><?php echo htmlspecialchars($testimoni['pesan']); ?></p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar"><?php echo strtoupper(substr($testimoni['nama_pelanggan'], 0, 2)); ?></div>
+              <div>
+                <div class="testimonial-card__name"><?php echo htmlspecialchars($testimoni['nama_pelanggan']); ?></div>
+                <div class="testimonial-card__package"><?php echo $testimoni['nama_paket'] ? htmlspecialchars($testimoni['nama_paket']) : 'Pelanggan SnD Tour'; ?></div>
+              </div>
+              <div class="testimonial-card__stars">
+                <?php for ($i = 1; $i <= 5; $i++): ?>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" <?php echo ($i <= $testimoni['rating']) ? '' : 'style="opacity:0.3"'; ?>><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <?php endfor; ?>
+              </div>
             </div>
           </div>
-        </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <!-- Fallback static testimonials when no data -->
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">Pengalaman liburan ke Bali bersama SnD Tour benar-benar luar biasa! Semua sudah terorganisir dengan baik, dari hotel, transportasi, hingga tempat wisata. Tidak perlu pusing mikir apapun, tinggal nikmati saja!</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">AS</div>
+              <div>
+                <div class="testimonial-card__name">Andi Setiawan</div>
+                <div class="testimonial-card__package">Pesona Bali 5D4N</div>
+              </div>
+              <div class="testimonial-card__stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+            </div>
+          </div>
 
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">Trip ke Singapura bareng SnD Tour seru banget! Guide-nya ramah, hotel strategis, dan itinerary-nya pas. Yang paling berkesan adalah team SnD sangat responsif dan helpful. Pasti balik lagi!</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">DP</div>
-            <div>
-              <div class="testimonial-card__name">Diana Putri</div>
-              <div class="testimonial-card__package">Singapore City Tour 4D3N</div>
-            </div>
-            <div class="testimonial-card__stars">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">Trip ke Singapura bareng SnD Tour seru banget! Guide-nya ramah, hotel strategis, dan itinerary-nya pas. Yang paling berkesan adalah team SnD sangat responsif dan helpful. Pasti balik lagi!</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">DP</div>
+              <div>
+                <div class="testimonial-card__name">Diana Putri</div>
+                <div class="testimonial-card__package">Singapore City Tour 4D3N</div>
+              </div>
+              <div class="testimonial-card__stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">Kami pakai jasa outbond SnD Tour untuk acara team building kantor dan hasilnya luar biasa memuaskan. Aktivitasnya seru, lokasi bagus, dan timnya sangat profesional. Recommended banget!</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">BW</div>
-            <div>
-              <div class="testimonial-card__name">Budi Wicaksono</div>
-              <div class="testimonial-card__package">Outbond Team Building</div>
-            </div>
-            <div class="testimonial-card__stars">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">Kami pakai jasa outbond SnD Tour untuk acara team building kantor dan hasilnya luar biasa memuaskan. Aktivitasnya seru, lokasi bagus, dan timnya sangat profesional. Recommended banget!</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">BW</div>
+              <div>
+                <div class="testimonial-card__name">Budi Wicaksono</div>
+                <div class="testimonial-card__package">Outbond Team Building</div>
+              </div>
+              <div class="testimonial-card__stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
             </div>
           </div>
-        </div>
+        <?php endif; ?>
 
       </div>
 
@@ -710,9 +741,9 @@ include 'config.php';
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div class="testimonials__dots">
-          <button class="testimonials__dot testimonials__dot--active" aria-label="Testimoni 1"></button>
-          <button class="testimonials__dot" aria-label="Testimoni 2"></button>
-          <button class="testimonials__dot" aria-label="Testimoni 3"></button>
+          <?php for ($i = 0; $i < count($testimoni_list); $i++): ?>
+            <button class="testimonials__dot <?php echo ($i == 0) ? 'testimonials__dot--active' : ''; ?>" aria-label="Testimoni <?php echo $i + 1; ?>"></button>
+          <?php endfor; ?>
         </div>
         <button class="testimonials__arrow testimonials__arrow--next" aria-label="Testimoni berikutnya">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
