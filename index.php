@@ -340,7 +340,7 @@ include 'config.php';
               <img src="<?php
                 $gambar = $row["gambar"];
                 if(str_starts_with($gambar,"uploads/")) {
-                  $gambar = "https://app.faydev.my.id/crm-travel/".$gambar;
+                  $gambar = "admin/".$gambar;
                 }
 
                 echo $gambar;
