@@ -340,7 +340,7 @@ include 'config.php';
               <img src="<?php
                 $gambar = $row["gambar"];
                 if(str_starts_with($gambar,"uploads/")) {
-                  $gambar = "admin/".$gambar;
+                  $gambar = "dashboard/".$gambar;
                 }
 
                 echo $gambar;
@@ -515,71 +515,30 @@ include 'config.php';
       </div>
       <div class="categories__grid">
 
-        <!-- Wisata Religi -->
-        <a href="paket-wisata?kategori=religi" class="category-card reveal reveal--delay-1">
-          <img src="https://images.unsplash.com/photo-1564415637254-92c66292cd64?w=600&q=80" alt="Wisata Religi - Masjid dan tempat ibadah" class="category-card__img" loading="lazy">
+        <?php
+          $sql_kategori = "select * from kategori where status = 'Aktif' order by id asc";
+          $result_kategori = mysqli_query($conn, $sql_kategori);
+          $delay = 1;
+          while ($row_kategori = mysqli_fetch_array($result_kategori)) {
+            // Generate URL-friendly slug from nama_kategori
+            $slug = strtolower(str_replace(' ', '-', $row_kategori['nama_kategori']));
+            // Use default image if gambar is empty
+            $gambar_kategori = $row_kategori['gambar'] ? "dashboard/".$row_kategori['gambar'] : 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80';
+        ?>
+        <a href="paket-wisata?kategori=<?php echo $slug; ?>" class="category-card reveal reveal--delay-<?php echo $delay; ?>">
+          <img src="<?php echo $gambar_kategori; ?>" alt="<?php echo $row_kategori['nama_kategori']; ?>" class="category-card__img" loading="lazy">
           <div class="category-card__overlay"></div>
           <div class="category-card__content">
             <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
-            <h3 class="category-card__title">Wisata Religi</h3>
-            <span class="category-card__count">12 Paket Tersedia</span>
+            <h3 class="category-card__title"><?php echo $row_kategori['nama_kategori']; ?></h3>
+            <span class="category-card__count"><?php echo $row_kategori['deskripsi'] ? $row_kategori['deskripsi'] : 'Lihat Paket'; ?></span>
           </div>
         </a>
-
-        <!-- Wisata Edukasi -->
-        <a href="paket-wisata?kategori=edukasi" class="category-card reveal reveal--delay-2">
-          <img src="./images/wisata-edukasi.webp" alt="Wisata Edukasi - Belajar dan berwisata" class="category-card__img" loading="lazy">
-          <div class="category-card__overlay"></div>
-          <div class="category-card__content">
-            <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            <h3 class="category-card__title">Wisata Edukasi</h3>
-            <span class="category-card__count">8 Paket Tersedia</span>
-          </div>
-        </a>
-
-        <!-- Bulan Madu -->
-        <a href="paket-wisata?kategori=bulan-madu" class="category-card reveal reveal--delay-3">
-          <img src="./images/bulan-madu.jpeg" alt="Bulan Madu - Romantis di pantai" class="category-card__img" loading="lazy">
-          <div class="category-card__overlay"></div>
-          <div class="category-card__content">
-            <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <h3 class="category-card__title">Bulan Madu</h3>
-            <span class="category-card__count">10 Paket Tersedia</span>
-          </div>
-        </a>
-
-        <!-- Wisata Keluarga -->
-        <a href="paket-wisata?kategori=keluarga" class="category-card reveal reveal--delay-4">
-          <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&q=80" alt="Wisata Keluarga - Berlibur bersama" class="category-card__img" loading="lazy">
-          <div class="category-card__overlay"></div>
-          <div class="category-card__content">
-            <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <h3 class="category-card__title">Wisata Keluarga</h3>
-            <span class="category-card__count">15 Paket Tersedia</span>
-          </div>
-        </a>
-
-        <!-- Wisata Perusahaan -->
-        <a href="paket-wisata?kategori=perusahaan" class="category-card reveal reveal--delay-5">
-          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=80" alt="Wisata Perusahaan - Team building dan outing" class="category-card__img" loading="lazy">
-          <div class="category-card__overlay"></div>
-          <div class="category-card__content">
-            <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <h3 class="category-card__title">Wisata Perusahaan</h3>
-            <span class="category-card__count">7 Paket Tersedia</span>
-          </div>
-        </a>
-
-        <!-- Wisata Adventure -->
-        <a href="paket-wisata?kategori=adventure" class="category-card reveal reveal--delay-6">
-          <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&q=80" alt="Wisata Adventure - Petualangan alam" class="category-card__img" loading="lazy">
-          <div class="category-card__overlay"></div>
-          <div class="category-card__content">
-            <svg class="category-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <h3 class="category-card__title">Wisata Adventure</h3>
-            <span class="category-card__count">9 Paket Tersedia</span>
-          </div>
-        </a>
+        <?php
+            $delay++;
+            if ($delay > 6) $delay = 1;
+          }
+        ?>
 
       </div>
     </div>
