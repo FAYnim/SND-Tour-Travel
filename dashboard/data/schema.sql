@@ -132,6 +132,25 @@ CREATE TABLE `manajemen_pembayaran` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `paket_spesial_liburan`
+--
+
+CREATE TABLE `paket_spesial_liburan` (
+  `id` int(11) NOT NULL,
+  `nama_paket` varchar(120) NOT NULL,
+  `durasi` varchar(60) NOT NULL,
+  `lokasi` varchar(120) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `label` varchar(50) NOT NULL,
+  `rating` tinyint(4) NOT NULL,
+  `jenis_liburan` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `partner_maskapai`
 --
 
@@ -244,6 +263,12 @@ ALTER TABLE `manajemen_pembayaran`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `paket_spesial_liburan`
+--
+ALTER TABLE `paket_spesial_liburan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `partner_maskapai`
 --
 ALTER TABLE `partner_maskapai`
@@ -311,6 +336,12 @@ ALTER TABLE `manajemen_paket`
 -- AUTO_INCREMENT for table `manajemen_pembayaran`
 --
 ALTER TABLE `manajemen_pembayaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `paket_spesial_liburan`
+--
+ALTER TABLE `paket_spesial_liburan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

@@ -75,6 +75,26 @@
                 </ul>
             </li>
 
+            <!-- Paket Spesial Liburan -->
+            <li class="nav-item">
+                <a href="#menuPaketSpesial" class="nav-link" data-bs-toggle="collapse" aria-expanded="<?php echo in_array($current_page, ['manajemen-paket-spesial', 'data-manajemen-paket-spesial', 'edit-manajemen-paket-spesial']) ? 'true' : 'false'; ?>">
+                    <i class="bi bi-star"></i>
+                    <span>Paket Spesial</span>
+                </a>
+                <ul class="nav-submenu collapse <?php echo in_array($current_page, ['manajemen-paket-spesial', 'data-manajemen-paket-spesial', 'edit-manajemen-paket-spesial']) ? 'show active' : ''; ?>" id="menuPaketSpesial">
+                    <li class="nav-item">
+                        <a href="data-manajemen-paket-spesial" class="nav-link <?php echo $current_page === 'data-manajemen-paket-spesial' ? 'active' : ''; ?>">
+                            <span>Data Paket Spesial</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manajemen-paket-spesial" class="nav-link <?php echo $current_page === 'manajemen-paket-spesial' ? 'active' : ''; ?>">
+                            <span>Tambah Paket</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             <!-- Pembayaran -->
             <li class="nav-item">
                 <a href="#menuPembayaran" class="nav-link" data-bs-toggle="collapse" aria-expanded="<?php echo in_array($current_page, ['manajemen-pembayaran', 'data-manajemen-pembayaran', 'edit-manajemen-pembayaran']) ? 'true' : 'false'; ?>">
