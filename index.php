@@ -415,106 +415,54 @@ $profil = mysqli_fetch_array($result_profil);
         <div class="section-header__line"></div>
       </div>
       <div class="special-tours__scroll">
-
-        <!-- Tahun Baru -->
+        <?php
+          $sql_spesial = "SELECT * FROM paket_spesial_liburan ORDER BY id DESC LIMIT 5";
+          $result_spesial = mysqli_query($conn, $sql_spesial);
+          
+          if (mysqli_num_rows($result_spesial) > 0) {
+            while ($row_spesial = mysqli_fetch_array($result_spesial)) {
+              $kategori_slug = strtolower(str_replace(' ', '-', $row_spesial['jenis_liburan']));
+              $gambar_spesial = $row_spesial['gambar'];
+              if(str_starts_with($gambar_spesial,"uploads/")) {
+                $gambar_spesial = "dashboard/".$gambar_spesial;
+              }
+        ?>
         <article class="card">
-          <a href="paket-wisata?kategori=tahun-baru">
+          <a href="paket-wisata?kategori=<?php echo urlencode($kategori_slug); ?>">
             <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=80" alt="Pantai untuk perayaan Tahun Baru" loading="lazy" width="500" height="313">
-              <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--teal-primary);color:var(--near-black);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Tahun Baru</span>
+              <img src="<?php echo htmlspecialchars($gambar_spesial); ?>" alt="<?php echo htmlspecialchars($row_spesial['nama_paket']); ?>" loading="lazy" width="500" height="313" style="object-fit: cover;">
+              <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--teal-primary);color:var(--near-black);text-transform:uppercase;letter-spacing:0.5px;z-index:2;display:inline-block;width:max-content;"><?php echo htmlspecialchars($row_spesial['jenis_liburan']); ?></span>
+              <?php if (!empty($row_spesial['label'])): ?>
+                <span class="card__badge" style="top:var(--space-3);right:var(--space-3);left:auto;width:max-content;"><?php echo htmlspecialchars($row_spesial['label']); ?></span>
+              <?php endif; ?>
             </div>
           </a>
           <div class="card__body">
             <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata?kategori=tahun-baru">Paket Tahun Baru</a></h3>
-            <p class="card__text">Rayakan pergantian tahun di destinasi impian dengan keluarga dan sahabat.</p>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 3.500.000</span>
+            <h3 class="card__title"><a href="paket-wisata?kategori=<?php echo urlencode($kategori_slug); ?>"><?php echo htmlspecialchars($row_spesial['nama_paket']); ?></a></h3>
+            <div class="card__meta" style="margin-bottom:var(--space-2); display:flex; gap:var(--space-2); font-size:var(--text-sm); color:var(--text-muted);">
+              <span class="card__meta-item" style="display:flex; align-items:center; gap:4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <?php echo htmlspecialchars($row_spesial['lokasi']); ?>
+              </span>
+              <span class="card__duration" style="display:flex; align-items:center; gap:4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <?php echo htmlspecialchars($row_spesial['durasi']); ?>
+              </span>
             </div>
-            <a href="paket-wisata?kategori=tahun-baru" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
+            <div class="card__price" style="margin-bottom:var(--space-3);">
+              <span class="card__price-label">Start From</span>
+              <span class="card__price-value">Rp <?php echo number_format($row_spesial['harga'], 0, ",", "."); ?></span>
+            </div>
+            <a href="detail-paket?id=<?php echo $row_spesial['id']; ?>&type=spesial" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
           </div>
         </article>
-
-        <!-- Natal -->
-        <article class="card">
-          <a href="paket-wisata?kategori=natal">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=80" alt="Liburan Natal di pegunungan" loading="lazy" width="500" height="313">
-              <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--coral);color:var(--white);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Natal</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata?kategori=natal">Paket Natal</a></h3>
-            <p class="card__text">Rayakan natal dengan suasana berbeda di destinasi wisata pilihan.</p>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 4.200.000</span>
-            </div>
-            <a href="paket-wisata?kategori=natal" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
-          </div>
-        </article>
-
-        <!-- Idul Fitri -->
-        <article class="card">
-          <a href="paket-wisata?kategori=idul-fitri">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=500&q=80" alt="Liburan Idul Fitri bersama keluarga" loading="lazy" width="500" height="313">
-              <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--emerald);color:var(--white);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Idul Fitri</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata?kategori=idul-fitri">Paket Idul Fitri</a></h3>
-            <p class="card__text">Libur Lebaran semakin bermakna dengan wisata bersama keluarga besar.</p>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 3.800.000</span>
-            </div>
-            <a href="paket-wisata?kategori=idul-fitri" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
-          </div>
-        </article>
-
-        <!-- Libur Sekolah -->
-        <article class="card">
-          <a href="paket-wisata?kategori=libur-sekolah">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=500&q=80" alt="Liburan sekolah di pantai" loading="lazy" width="500" height="313">
-              <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--amber);color:var(--near-black);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Libur Sekolah</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata?kategori=libur-sekolah">Paket Libur Sekolah</a></h3>
-            <p class="card__text">Isi liburan sekolah anak dengan petualangan seru dan edukatif.</p>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 2.900.000</span>
-            </div>
-            <a href="paket-wisata?kategori=libur-sekolah" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
-          </div>
-        </article>
-
-        <!-- Imlek -->
-        <article class="card">
-          <a href="paket-wisata?kategori=imlek">
-            <div class="card__image">
-              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80" alt="Liburan Imlek ke destinasi favorit" loading="lazy" width="500" height="313">
-              <span class="card__badge--teal" style="position:absolute;top:var(--space-3);left:var(--space-3);padding:4px 14px;font-size:var(--text-xs);font-weight:600;border-radius:var(--radius-full);background:var(--coral);color:var(--white);text-transform:uppercase;letter-spacing:0.5px;z-index:2;">Imlek</span>
-            </div>
-          </a>
-          <div class="card__body">
-            <span class="card__category">Spesial Liburan</span>
-            <h3 class="card__title"><a href="paket-wisata?kategori=imlek">Paket Imlek</a></h3>
-            <p class="card__text">Sambut tahun baru Imlek dengan liburan istimewa bersama keluarga.</p>
-            <div class="card__price">
-              <span class="card__price-label">Start From</span>
-              <span class="card__price-value">Rp 5.100.000</span>
-            </div>
-            <a href="paket-wisata?kategori=imlek" class="btn btn--secondary btn--sm btn--full">LIHAT PAKET</a>
-          </div>
-        </article>
+        <?php
+            }
+          } else {
+            echo "<p style='text-align:center; width:100%; color:var(--text-muted); padding:var(--space-8) 0;'>Belum ada paket spesial liburan saat ini.</p>";
+          }
+        ?>
 
       </div>
     </div>
